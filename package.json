@@ -1,0 +1,12 @@
+{
+  "name": "squad47_rampwalk_failures",
+  "version": "1.0.0",
+  "description": "Title - Funny ramp walk failures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
