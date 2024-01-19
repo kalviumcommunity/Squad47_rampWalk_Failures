@@ -1,18 +1,10 @@
 const express = require('express');
 const app = express();
-const port = process.env.PUBLIC_PORT ;
 
-// define the ping route with the response in JSON
+app.get('/',(req, res) => {
+  res.send("Kritika's Server is working");
+});
 
-app.get('/', (req, res)=>{
-  res.send("pong");
+app.listen(5000,()=>{
+  console.log("port is working")
 })
-
-if (require.main === module) {
-
-  app.listen(port, () => {
-    console.log(`🚀 server running on PORT: ${port}`);
-  });
-}
-
-module.exports = app;
