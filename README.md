@@ -9,3 +9,10 @@ Some of the images are given here -
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKgAjahWEIs10LFxpXY1Q3ihF83q1kd_qNFw&usqp=CAU"
 
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyv_FXBv-r-NHFVZBuc-WxLAhPjl36SFsVQw&usqp=CAU"
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSutU6Jmnu7Inir1tI-kr49tcwspmBfJlKEbg&usqp=CAU"
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bR5q-JpQNkrDlA-8clXZyaZltB-WcxsGq66rc5bplyY7vfvUKAiuv0kUyTId-4KRc4c&usqp=CAU"
+
+
+Deployed link : https://squad47-rampwalk-failuressssss.pages.dev/

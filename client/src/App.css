@@ -20,6 +20,7 @@ div{
     padding: 10px;
     text-align: center;
 }
+}
 h1{
     text-shadow: 0px 2px 2px;
 }
@@ -42,3 +43,4 @@ h1{
     background-color: rgb(248, 203, 148);
     transition: 0.7s;
 }
+
