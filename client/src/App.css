@@ -7,12 +7,38 @@
     font-weight: bold;
     margin: 40px;
     box-shadow: 0px 2px 4px;
+    margin-left: 40%;
+    background-color: rgba(224, 145, 54, 0.863);
+}
+.img:hover{
+    background-color: rgb(248, 203, 148);
+    transition: 0.5s;
 }
 div{
-    background-color: burlywood;
+    background-color: rgb(205, 141, 56);
     border-radius: 13px;
     padding: 10px;
+    text-align: center;
 }
 h1{
     text-shadow: 0px 2px 2px;
+}
+.data{
+    background-color: antiquewhite;
+    margin: 30px;
+    margin-left: 22%;
+    margin-right: 22%;
+    text-align: center;
+    box-shadow: 0px 4px 7px;
+}
+.home{
+    background-color: antiquewhite;
+    margin: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0px 4px 7px;
+}
+.data:hover{
+    background-color: rgb(248, 203, 148);
+    transition: 0.7s;
 }
