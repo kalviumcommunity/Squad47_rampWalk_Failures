@@ -42,3 +42,27 @@ h1{
     background-color: rgb(248, 203, 148);
     transition: 0.7s;
 }
+.btn{
+    background-color: rgb(110, 108, 108);
+    line-height: 30px;
+    color: azure;
+    font-weight: bolder;
+    width: 80px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 2px 2px;
+    font-size: 18px;
+}
+input{
+    line-height: 30px;
+    border-radius: 11px;
+    padding: 4px;
+    margin: 10px;
+}
+h2{
+    font-size: 30px;
+}
+.btn:hover{
+    background-color: aliceblue;
+    color: black;
+    transition: 0.5s;
+}
