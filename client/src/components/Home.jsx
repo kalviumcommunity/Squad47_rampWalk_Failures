@@ -12,7 +12,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='home'>
+<div className='home'>
+
       <h1>Home</h1>
       <h2>
         <Link to="/create">Click here </Link> to add a new event
