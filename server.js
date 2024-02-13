@@ -33,6 +33,15 @@ client.connect().then(() => {
     const result = await collection.insertOne({Id, Event, Likes, Rating, Views});
     res.json(result);
   })
+
+  app.put('/:id', async (req, res) => {
+    const {id} = req.params;
+    const {Id, Event, Likes, Rating, Views} = req.body;
+    const result = await collection.updateOne({Id: id}, {$set: {Id, Event, Likes, Rating, Views}});
+    res.json(result);
+  })
+
+  
 }).catch((err) => {
   console.error('Error connecting to MongoDB Atlas', err);
 });

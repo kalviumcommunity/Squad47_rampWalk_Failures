@@ -66,3 +66,16 @@ h2{
     color: black;
     transition: 0.5s;
 }
+.update{
+    background-color: rgb(84, 213, 84);
+    line-height: 40px;
+    width: 100px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 13px;
+    box-shadow: 0px 2px 2px 2px;
+}
+.update:hover{
+    box-shadow: 0px 3px 3px 3px;
+    transition: 0.5s;
+}

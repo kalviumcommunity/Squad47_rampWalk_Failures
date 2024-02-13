@@ -18,10 +18,13 @@ const Home = () => {
       <h2>
         <Link to="/create">Click here </Link> to add a new event
       </h2>
+      
       <p>Some rampwalk failures will be shown in this website.</p>
       <div className="img"> image</div>
       <p>For more information, please refer to the README file.</p>
       <p>Thank you for using this website.</p>
+
+      <button className='update'><Link to={`/update/${data}`}>Update</Link></button>
 
       {data["events"] &&
         data["events"].map((item, index) => (

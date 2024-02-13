@@ -45,11 +45,11 @@ function Create() {
         </div>
 
         <div><label htmlFor=""><strong>Rating</strong></label>
-        <input type="text" placeholder='Event Ratings' onChange={(e) => setRating(e.target.value)}/>
+        <input type="text" placeholder='Event Ratings...' onChange={(e) => setRating(e.target.value)}/>
         </div>
 
         <div><label htmlFor=""><strong>Views</strong></label>
-        <input type="text" placeholder='Event Views' onChange={(e) => setViews(e.target.value)}/>
+        <input type="text" placeholder='Event Views...' onChange={(e) => setViews(e.target.value)}/>
         </div>
 
         <div >
