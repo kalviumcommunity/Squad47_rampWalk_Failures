@@ -22,6 +22,8 @@ function Update() {
           .catch((err) => console.log(err));
       },[]);
 
+     
+
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post("http://localhost:3000",{
@@ -37,8 +39,11 @@ function Update() {
         })
         .catch(err => console.log(err))
     }
+
+
   return (
     <div>
+
       <form onSubmit={(e)=>handleSubmit(e)}>
         <h2>Update the user</h2>
 
