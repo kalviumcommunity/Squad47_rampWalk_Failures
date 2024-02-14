@@ -2,8 +2,8 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
 const app = express();
-const port = 3000;
 const bodyParser = require('body-parser')
+
 
 
 app.use(cors());
@@ -28,16 +28,17 @@ client.connect().then(() => {
   })
 
 
-  app.post('/', async (req, res) => {
-    const {Id, Event, Likes, Rating, Views} = req.body;
-    const result = await collection.insertOne({Id, Event, Likes, Rating, Views});
-    res.json(result);
-  })
-
   app.put('/:id', async (req, res) => {
     const {id} = req.params;
     const {Id, Event, Likes, Rating, Views} = req.body;
     const result = await collection.updateOne({Id: id}, {$set: {Id, Event, Likes, Rating, Views}});
+    res.json(result);
+  })
+
+
+  app.post('/', async (req, res) => {
+    const { Id, Event, Likes, Rating, Views } = req.body;
+    const result = await collection.insertOne({ Id, Event, Likes, Rating, Views });
     res.json(result);
   })
 
@@ -46,6 +47,6 @@ client.connect().then(() => {
   console.error('Error connecting to MongoDB Atlas', err);
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+app.listen(3000, () => {
+  console.log(`Server running at 3000`);
 });

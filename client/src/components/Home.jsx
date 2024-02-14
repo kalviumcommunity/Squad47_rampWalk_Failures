@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     fetch('http://localhost:3000/')
@@ -11,8 +12,58 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    const getCookie = (name) => {
+      const cookieArray = document.cookie.split("; ");
+      const cookie = cookieArray.find((row) => row.startsWith(name + "="));
+      return cookie ? cookie.split("=")[1] : null;
+    };
+    const name = getCookie("name");
+    const email = getCookie("email");
+    const username = getCookie("username");
+  
+    console.log("User Data:", { name, email, username });
+  
+    setUserData({ name, email, username });
+  }, []);
+  
+  
+    useEffect(() => {
+      async function getApi() {
+        try {
+          const res = await axios.get("http://localhost:3000/");
+          console.log(res.data);
+          setData(res.data);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      getApi();
+    }, []);
+  
+    const clearCookie = (name) => {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    };
+  
+    const handleLogout = (e) => {
+      clearCookie("name");
+      clearCookie("email");
+      clearCookie("password");
+      console.log("Updated Cookies:", document.cookie);
+    };
+
   return (
 <div className='home'>
+
+<nav>
+  <h2>Welcome</h2>
+  {userData.name && <p>Name: {userData.name}</p>}
+  {userData.email && <p>Email: {userData.email}</p>}
+  {userData.password && <p>Password: {userData.password}</p>}
+  <Link to="/login">
+    <button onClick={handleLogout} className='logout'>Logout</button>
+</Link>
+</nav>
 
       <h1>Home</h1>
       <h2>
