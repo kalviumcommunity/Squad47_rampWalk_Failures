@@ -20,11 +20,11 @@ const Home = () => {
     };
     const name = getCookie("name");
     const email = getCookie("email");
-    const username = getCookie("username");
+    const password = getCookie("password");
   
-    console.log("User Data:", { name, email, username });
+    console.log("User Data:", { name, email, password });
   
-    setUserData({ name, email, username });
+    setUserData({ name, email, password });
   }, []);
   
   
