@@ -3,9 +3,10 @@ const { MongoClient, ObjectId } = require('mongodb');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
 
 const app = express();
-
+const JWT_SECRET_KEY = 'KritikaWalia';
 
 const userSchema = Joi.object({
   Id: Joi.number().required(),
@@ -55,7 +56,29 @@ client.connect()
       }
     });
 
+    app.post('/login', (req, res) => {
+      const { email, password } = req.body;
 
+      const token = jwt.sign({ email }, JWT_SECRET_KEY, { expiresIn: '1h' });
+      res.cookie('token', token, { httpOnly: true });
+      res.json({ success: "JWT connection successful" });
+  });
+
+  function authenticateToken(req, res, next) {
+    const token = req.cookies.token;
+
+    if (!token) {
+        return res.status(401).json({ error: 'Unauthorized: Missing token' });
+    }
+
+    jwt.verify(token, JWT_SECRET_KEY, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ error: 'Forbidden: Invalid token' });
+        }
+        req.user = decoded;
+        next();
+    });
+  }
 
     app.post('/users', async (req, res) => {
       try {
@@ -73,7 +96,6 @@ client.connect()
       }
     });
   })
-
 
   .catch((err) => {
     console.error('Error connecting to MongoDB Atlas', err);
