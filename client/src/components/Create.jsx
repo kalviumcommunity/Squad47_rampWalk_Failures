@@ -8,6 +8,7 @@ function Create() {
     const [Likes, setLikes] = useState()
     const [Rating, setRating] = useState()
     const [Views, setViews] = useState()
+    const [name,setName] = useState("")
 
     const navigate = useNavigate()
 
@@ -18,8 +19,10 @@ function Create() {
             Event : Event,
             Likes:Likes,
             Rating : Rating,
-            Views : Views
+            Views : Views,
+            name : name
         })
+        
         .then(result=>{
             console.log(result)
             navigate("/")
@@ -30,6 +33,11 @@ function Create() {
     <div>
       <form onSubmit={(e)=>handleSubmit(e)}>
         <h2>Add user</h2>
+
+        <div>
+                <label>Enter Name</label>
+                <input type="text" placeholder="Enter your name" onChange={(e)=>setName(e.target.value)}/>
+            </div>
 
         <div><label htmlFor=""><strong>Id</strong></label>
         <input type="text" placeholder='Event Id...' onChange={(e) => setId(e.target.value)} />

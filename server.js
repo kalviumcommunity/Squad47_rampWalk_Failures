@@ -19,7 +19,7 @@ const userSchema = Joi.object({
 app.use(cors());
 app.use(bodyParser.json());
 
-const uri = 'mongodb+srv://kritikawalia1003:kritikawalia10@cluster0.myqbzuo.mongodb.net/list_data?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://kritikawalia1003:kritikawalia10@cluster0.13foqxq.mongodb.net/?retryWrites=true&w=majority';
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
