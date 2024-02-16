@@ -20,6 +20,7 @@ function Update() {
           .then((res) => console.log(res))
           .then((jsonData) => setData(jsonData[0]))
           .catch((err) => console.log(err));
+
       },[]);
 
      
@@ -31,7 +32,7 @@ function Update() {
             Event : Event,
             Likes:Likes,
             Rating : Rating,
-            Views : Views
+            Views : Views,
         })
         .then(result=>{
             console.log(result)
